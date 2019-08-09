@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="courseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Comapny">
+          <Key>
+            <PropertyRef Name="SN" />
+          </Key>
+          <Property Name="SN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsEnable" Type="bit" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'course.dbo.Product' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="SN" />
+            <PropertyRef Name="CompanySN" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="SN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanySN" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Stocks" Type="int" />
+          <Property Name="IsEnable" Type="bit" />
+          <Property Name="BeginDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="courseModelStoreContainer">
+          <EntitySet Name="Comapny" EntityType="Self.Comapny" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Product].[SN] AS [SN], 
+    [Product].[CompanySN] AS [CompanySN], 
+    [Product].[ProductName] AS [ProductName], 
+    [Product].[Description] AS [Description], 
+    [Product].[Price] AS [Price], 
+    [Product].[Stocks] AS [Stocks], 
+    [Product].[IsEnable] AS [IsEnable], 
+    [Product].[BeginDate] AS [BeginDate], 
+    [Product].[EndDate] AS [EndDate]
+    FROM [dbo].[Product] AS [Product]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="courseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Comapny">
+          <Key>
+            <PropertyRef Name="SN" />
+          </Key>
+          <Property Name="SN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsEnable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="SN" />
+            <PropertyRef Name="CompanySN" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="SN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanySN" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Stocks" Type="Int32" />
+          <Property Name="IsEnable" Type="Boolean" />
+          <Property Name="BeginDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+        </EntityType>
+        <EntityContainer Name="courseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Comapny" EntityType="Self.Comapny" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="courseModelStoreContainer" CdmEntityContainer="courseEntities">
+          <EntitySetMapping Name="Comapny">
+            <EntityTypeMapping TypeName="courseModel.Comapny">
+              <MappingFragment StoreEntitySet="Comapny">
+                <ScalarProperty Name="SN" ColumnName="SN" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="courseModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="SN" ColumnName="SN" />
+                <ScalarProperty Name="CompanySN" ColumnName="CompanySN" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Stocks" ColumnName="Stocks" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
