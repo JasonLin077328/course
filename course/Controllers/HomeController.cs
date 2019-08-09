@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using course.Models;
 
 namespace course.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
+        {            
             return View();//test
         }
 
