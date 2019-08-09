@@ -12,6 +12,7 @@ namespace course
     {
         protected void Application_Start()
         {
+            ///123123
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
