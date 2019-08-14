@@ -8,7 +8,7 @@ namespace course.Models
 
 		public EFUnitOfWork()
 		{
-			Context = new courseEntities();
+			Context = new courseEntities1();
 		}
 
 		public void Commit()

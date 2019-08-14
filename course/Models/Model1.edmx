@@ -77,10 +77,10 @@
           <Property Name="Price" Type="Int32" />
           <Property Name="Stocks" Type="Int32" />
           <Property Name="IsEnable" Type="Boolean" />
-          <Property Name="BeginDate" Type="DateTime" />
-          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="BeginDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityContainer Name="courseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="courseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Comapny" EntityType="Self.Comapny" />
           <EntitySet Name="Product" EntityType="Self.Product" />
         </EntityContainer>
@@ -89,7 +89,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="courseModelStoreContainer" CdmEntityContainer="courseEntities">
+        <EntityContainerMapping StorageEntityContainer="courseModelStoreContainer" CdmEntityContainer="courseEntities1">
           <EntitySetMapping Name="Comapny">
             <EntityTypeMapping TypeName="courseModel.Comapny">
               <MappingFragment StoreEntitySet="Comapny">

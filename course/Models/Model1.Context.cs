@@ -13,10 +13,10 @@ namespace course.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class courseEntities : DbContext
+    public partial class courseEntities1 : DbContext
     {
-        public courseEntities()
-            : base("name=courseEntities")
+        public courseEntities1()
+            : base("name=courseEntities1")
         {
         }
     
