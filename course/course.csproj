@@ -285,6 +285,7 @@
     <Content Include="Views\Html\_ViewStart.cshtml" />
     <Content Include="Views\Html\Index.cshtml" />
     <Content Include="Views\Html\Structure.cshtml" />
+    <Content Include="Views\Html\Attribute.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

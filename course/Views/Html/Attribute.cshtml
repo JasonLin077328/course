@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Html 基本概念2";
+}
+
+<h2>Html 基本概念2</h2>
+
+<h4>Html Tag 裡面可以設定屬性(Attribute)</h4>
+<pre class="code">
+<code class="html">
+        &lt;input type="text" id="this-is-input" class="input" placeholder="這是一個input" /&gt;
+        &lt;input type="text" required readonly /&gt;
+        &lt;div style="width:100px" /&gt;
+</code>
+</pre>
+<br />
+
+<h4>屬性可以決定那個tag要如何呈現 或是他能做什麼</h4>
+<pre class="code">
+<code class="html">
+        &lt;input type="text" placeholder="這是一個純文字input" /&gt;
+        &nbsp;<input type="text" placeholder="這是一個純文字input" />
+
+        &lt;input type="password" placeholder="這是一個輸入密碼用的input" /&gt;
+        &nbsp;<input type="password" placeholder="這是一個輸入密碼用的input" />
+
+        &lt;input type="text" placeholder="這是一個不能輸入的input" readonly /&gt;
+        &nbsp;<input type="text" placeholder="這是一個不能輸入的input" readonly />
+</code>
+</pre>
+<br />
+
+
+<h4>有幾個屬性是共用的 大部分的TAG都可以用  其餘個別的會在每個TAG說明</h4>
+<pre class="code">
+    <code class="html">
+        ID 是唯一的 一個畫面中一個ID只能存在一個
+        &lt;div id="div1" /&gt;
+        &lt;div id="div2" /&gt;
+
+        CLASS 不是唯一的 也可以在一個元素中設定多個class
+        &lt;div class="black-text" /&gt;
+        &lt;div class="black-text black-board" /&gt;
+
+        STYLE 可以直接寫CSS在上面 (但這優先度最高 會覆蓋樣式表 使用前請跟專案成員確認)
+        &lt;span style="color:red;border:solid 1px black"&gt; text &lt;/span&gt;
+        <span style="color:red;border:solid 1px black"> text </span>
+    </code>
+</pre>
+<br />
+
+
+<h4>CSS可以透過屬性來套用樣式</h4>
+<style>
+    input[type=number] {
+        color: blue;
+    }
+
+    span#span1 {
+        color: red;
+    }
+
+    span.green-text {
+        color: green;
+    }
+
+    span.black-board {
+        border: solid 1px black;
+    }
+</style>
+<pre class="code">
+<code class="css">
+        input[type=number] {
+            color: blue;
+        }
+        span#span1 {
+            color: red;
+        }
+        span.green-text {
+            color: green;
+        }
+        span.black-board{
+            border:solid 1px black;
+        }
+</code>
+<code class="html">
+        &lt;input type="number" placeholder="這是一個純數字input" /&gt;
+        &nbsp;<input type="number" placeholder="這是一個純數字input" />
+
+        &lt;span id="span1"&gt; text &lt;/span&gt;
+        <span id="span1"> text </span>
+
+        &lt;span class="green-text black-board"&gt; text &lt;/span&gt;
+        <span class="green-text black-board"> text </span>
+</code>
+</pre>
+<br />
+
+

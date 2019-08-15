@@ -10,6 +10,7 @@ namespace course.Controllers
     {
         public ActionResult Index() => View();
         public ActionResult Structure() => View();
+        public ActionResult Attribute() => View();
         public ActionResult Header() => View();
         public ActionResult Body() => View();
         public ActionResult Paragraph() => View();
