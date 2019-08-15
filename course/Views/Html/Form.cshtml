@@ -126,6 +126,29 @@
 </pre>
 <br />
 
+<h4> &lt;select&gt; 下拉式選單</h4>
+<pre class="code">
+<code class="html">
+        &lt;select name="select"&gt; 
+            &lt;option value="" &gt; 選項文字1 &lt;/option&gt;
+            &lt;option selected&gt; 選項文字2 &lt;/option&gt;
+            &lt;option disable&gt; 選項文字3 &lt;/option&gt;
+        &lt;/select&gt;
+        <select name="select">
+            <option value="選項值">選項文字1</option>
+            <option selected>選項文字2</option>
+            <option disabled>選項文字3</option>
+        </select>
+        name="...": 欄位名稱
+        option: 選項文字 
+        option.value="...": 選項值
+        option.selected: 預設被選擇
+        option.disable: 不可被選擇
+        表單送出時會根據下拉式選單選擇的選項去送出值  如果沒值 就是送出選項文字
+</code>
+</pre>
+<br />
+
 <h4> &lt;button&gt; 按鈕</h4>
 <pre class="code">
 <code class="html">

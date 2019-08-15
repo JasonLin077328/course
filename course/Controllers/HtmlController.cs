@@ -17,14 +17,20 @@ namespace course.Controllers
         [HttpGet]
         public ActionResult Form() => View();
         [HttpPost]
-        public ActionResult Form(Dictionary<string, string> data)
+        public ActionResult Form(FormCollection post_data)
         {
+            var data = new Dictionary<string, string>();
+            foreach (string key in post_data.Keys)
+                data.Add(key.ToString(), post_data.GetValue(key).AttemptedValue);
             ViewData["postdata"] = data;
             return View();
         }
 
 
         public ActionResult HomeWork() => View();
+        public ActionResult Test() => View();
+
+
 
 
     }
