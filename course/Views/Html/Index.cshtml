@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Html 基本概念";
+}
+<h2>Html 基本概念</h2>
+<br />
+<!-- 相信我  不要來copy這裡  去看實際畫面比較好-->
+<h4>Html 是由最基本的Html Tag元素所組成</h4>
+<pre class="code">
+<code class="html">
+        &lt;...&gt;
+</code>
+</pre>
+<br />
+
+
+<h4>Html Tag 是由Start Tag 跟 End Tag</h4>
+<pre class="code">
+<code class="html">
+        &lt;...&gt; 這是start
+        &lt;/...&gt; 這是end
+        &lt;...&gt; 中間夾的是內容 &lt;/...&gt;
+</code>
+</pre>
+<br />
+
+<h4>但是有一些沒有內容的可以這樣寫</h4>
+<pre class="code">
+<code class="html">
+        &lt;... /&gt;
+        &lt;input type="text" /&gt;
+        &lt;br /&gt;
+</code>
+</pre>
+<br />
+
+<h4>Html Tag 裡面可以設定屬性</h4>
+<pre class="code">
+<code class="html">
+        &lt;input type="text" id="this-is-input" class="input" placeholder="這是一個input" /&gt;
+        &lt;input type="text" required readonly /&gt;
+        &lt;div style="width:100px" /&gt;
+    </code>
+</pre>
+<br />
+
+
+<h4>那內容可不可以包其他的Tag?  可以</h4>
+<pre class="code">
+<code class="html">
+        &lt;div&gt;
+        &#9;&lt;span&gt;
+        &#9;&#9;div包了一個span
+        &#9;&lt;/span&gt;
+        &lt;/div&gt;
+</code>
+</pre>
+<br />
+
+<h4>所以整個Html 就是由 一個一個Tag 互相包覆而成的巨大文本</h4>
+<pre class="code">
+<code class="html">
+        &lt;html&gt;
+        &#9;&lt;head&gt;
+        &#9;&#9;&lt;title&gt;標題&lt;/title&gt;
+        &#9;&#9;...
+        &#9;&lt;/head&gt;
+        &#9;&lt;body&gt;
+        &#9;&#9;...
+        &#9;&lt;/body&gt;
+        &lt;/html&gt;
+</code>
+</pre>
+<br />
+
+<h4>最後註解這樣寫 但是會一起被輸出到前台</h4>
+<!--
+你是不是看的到我
+-->
+<pre class="code">
+<code class="html">
+        &lt;!-- 中間寫你的註解 --&gt;
+        &lt;!-- 
+        &#9;中間寫你的註解 
+        --&gt;
+</code>
+</pre>
+<br />
+
+

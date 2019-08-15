@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    asider.lession-html-menu {
+        width: 200px;
+        border: solid 1px #ccc;
+        padding: 12px;
+        display: inline-block;
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        background-color: white;
+    }
+
+        asider.lession-html-menu > h3 {
+            padding: 0;
+            margin: 0;
+        }
+
+        asider.lession-html-menu > ul {
+            padding-left: 10px;
+            margin: 0;
+            /*list-style: none;*/
+        }
+
+    pre.code {
+        background-color: #FAFAFA;
+        border: solid 1px #DDD;
+        border-radius: 6px;
+        padding: 0 8px;
+        -moz-tab-size: 4;
+        tab-size: 4;
+    }
+
+        pre.code > code {
+            background-color: transparent;
+        }
+</style>
+
+
+<asider class="lession-html-menu">
+    <h3>Html 教學</h3>
+    <ul>
+        <li>@Html.ActionLink("Html 基本概念", "Index", "Html")</li>
+        <li>@Html.ActionLink("Html 架構", "Structure", "Html")</li>
+        <li>@Html.ActionLink("網頁標頭", "Header", "Html")</li>
+        <li>@Html.ActionLink("網頁內容元素", "Body", "Html")</li>
+        <li>@Html.ActionLink("段落元素", "Paragraph", "Html")</li>
+        <li>@Html.ActionLink("表單&控制項", "Form", "Html")</li>
+    </ul>
+</asider>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+@RenderBody()
+<script>hljs.initHighlightingOnLoad();</script>
+
+
