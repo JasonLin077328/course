@@ -12,7 +12,7 @@ namespace course.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Comapny
+    public partial class Company
     {
         public int SN { get; set; }
         public string Name { get; set; }

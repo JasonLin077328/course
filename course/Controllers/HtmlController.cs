@@ -17,7 +17,7 @@ namespace course.Controllers
         [HttpGet]
         public ActionResult Form() => View();
         [HttpPost]
-        public ActionResult Form(Dictionary<string, string> data)
+        public ActionResult Form(FormCollection data)
         {
             ViewData["postdata"] = data;
             return View();
