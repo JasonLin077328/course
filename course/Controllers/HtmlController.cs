@@ -15,6 +15,7 @@ namespace course.Controllers
         public ActionResult Body() => View();
         public ActionResult Paragraph() => View();
         public ActionResult Form() => View();
+        public ActionResult HomeWork() => View();
 
     }
 }

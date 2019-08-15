@@ -15,6 +15,16 @@
 </pre>
 <br />
 
+<h4>屬性的值用 " 或 ' 去包覆都可以  但要前後都一樣</h4>
+<pre class="code">
+<code class="html">
+        &lt;input type="text" id="this-is-input" class='input' placeholder="這是一個'input' " /&gt;
+        <input type="text" id="this-is-input" class='input' placeholder="這是一個'input' " />
+</code>
+</pre>
+<br />
+
+
 <h4>屬性可以決定那個tag要如何呈現 或是他能做什麼</h4>
 <pre class="code">
 <code class="html">
@@ -39,47 +49,53 @@
         &lt;div id="div2" /&gt;
 
         CLASS 不是唯一的 也可以在一個元素中設定多個class
-        &lt;div class="black-text" /&gt;
-        &lt;div class="black-text black-board" /&gt;
+        &lt;div class="black-text" &gt;&lt;/div&gt;
+        &lt;div class="black-text black-board" &gt;&lt;/div&gt;
 
         STYLE 可以直接寫CSS在上面 (但這優先度最高 會覆蓋樣式表 使用前請跟專案成員確認)
         &lt;span style="color:red;border:solid 1px black"&gt; text &lt;/span&gt;
         <span style="color:red;border:solid 1px black"> text </span>
+
+        TITLE 提示用的文字 在某些瀏覽器或輔助障礙人士用的提示文字 滑鼠只要放到該元素上就會顯示
+        &lt;span title="提示文字"&gt; 滑鼠放上來看看 &lt;/span&gt;
+        <span title="提示文字"> 滑鼠放上來看看 </span>
     </code>
 </pre>
 <br />
 
 
 <h4>CSS可以透過屬性來套用樣式</h4>
+<h5>所以有了樣式, 你才會看到一個漂漂亮亮的網頁</h5>
 <style>
-    input[type=number] {
+    input[type=number] { /*從文字屬性*/
         color: blue;
     }
 
-    span#span1 {
+    #span1 { /*ID*/
         color: red;
     }
 
-    span.green-text {
+    .green-text { /*CLASS*/
         color: green;
     }
 
-    span.black-board {
+    .black-board { /*CLASS*/
         border: solid 1px black;
     }
 </style>
 <pre class="code">
 <code class="css">
-        input[type=number] {
+    
+        input[type=number] { /*從文字屬性*/
             color: blue;
         }
-        span#span1 {
+        #span1 {  /*ID*/
             color: red;
         }
-        span.green-text {
+        .green-text { /*CLASS*/
             color: green;
         }
-        span.black-board{
+        .black-board{ /*CLASS*/
             border:solid 1px black;
         }
 </code>
@@ -92,6 +108,10 @@
 
         &lt;span class="green-text black-board"&gt; text &lt;/span&gt;
         <span class="green-text black-board"> text </span>
+
+        
+        &lt;div class="black-board"&gt; text &lt;/div&gt;
+        <div class="black-board"> text </div>
 </code>
 </pre>
 <br />

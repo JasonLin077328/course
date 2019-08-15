@@ -286,6 +286,10 @@
     <Content Include="Views\Html\Index.cshtml" />
     <Content Include="Views\Html\Structure.cshtml" />
     <Content Include="Views\Html\Attribute.cshtml" />
+    <Content Include="Views\Html\Header.cshtml" />
+    <Content Include="Views\Html\Body.cshtml" />
+    <Content Include="Views\Html\Paragraph.cshtml" />
+    <Content Include="Views\Html\Form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

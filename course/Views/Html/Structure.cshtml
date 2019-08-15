@@ -5,7 +5,6 @@
 
 <h2>Html 架構</h2>
 
-
 <h4>這是一個Html的架構</h4>
 <pre class="code">
 <code class="html">
@@ -16,6 +15,51 @@
         &#9;&lt;/head&gt;
         &#9;&lt;body&gt;
         &#9;&#9;...
+        &#9;&lt;/body&gt;
+        &lt;/html&gt;
+</code>
+</pre>
+<br />
+
+<h4>這是Header 用於存放這個網頁的屬性與一些預先載入的資源</h4>
+<pre class="code">
+<code class="html">
+        &lt;head&gt;
+        &#9;&lt;title&gt;標題&lt;/title&gt;
+        &#9;...
+        &lt;/head&gt;
+</code>
+</pre>
+<br />
+
+<h4>這是Body 這裡就是寫你網頁的Html內容</h4>
+<pre class="code">
+<code class="html">
+        &lt;body&gt;
+        &#9;...
+        &lt;/body&gt;
+</code>
+</pre>
+<br />
+
+<h4>網頁生成的時候會由上到下依照這個架構依序生成/加載裡面的資源</h4>
+<pre class="code">
+<code class="html">
+        &lt;html&gt;
+        &#9;&lt;head&gt;
+        &#9;&#9;&lt;title&gt;標題&lt;/title&gt;
+        &#9;&#9;&lt;link rel='stylesheet' type='text/css' href='CSS網址'&gt;  &lt;!-- 生成到這裡 會去加載CSS --&gt;
+        &#9;&lt;/head&gt;
+        &#9;&lt;body&gt;
+        &#9;&#9;&lt;!-- Header讀取完後 才會再來生成Body的內容 --&gt;
+        &#9;&#9;&lt;img src="圖片的網址"  &gt;&lt;/script&gt;
+
+        &#9;&#9;&lt;script src="JS的網址" type="text/javascript" &gt;&lt;/script&gt;
+        &#9;&#9;&lt;!--
+        &#9;&#9;&#9;你也可以把JS放到最後面才載入
+        &#9;&#9;&#9;這樣的話 畫面會先被生成 才再來載入與運行JS
+        &#9;&#9;&#9;不會因為載入過久而畫面一直呈現白色畫面  會讓瀏覽的人不開心
+        &#9;&#9;--&gt;
         &#9;&lt;/body&gt;
         &lt;/html&gt;
 </code>

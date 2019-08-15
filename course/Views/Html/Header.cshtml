@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "網頁標頭元素";
+}
+
+<h2>網頁標頭元素</h2>
+
+
+<h4>這個章節來講Header裡面常塞些什麼</h4>
+<pre class="code">
+<code class="html">
+        &lt;head&gt;
+        &#9;&#9;...
+        &lt;/head&gt;
+</code>
+</pre>
+<br />
+
+<h4>網頁標題  沒錯  只是個標題</h4>
+<pre class="code">
+<code class="html">
+        &lt;title&gt; 內容寫上網頁的標題 &lt;/title&gt;
+</code>
+</pre>
+<br />
+
+<h4>&lt;Script&gt; 常用來加載JS</h4>
+<pre class="code">
+<code class="html">
+        &lt;script src="JS的網址" type="text/javascript" &gt;&lt;/script&gt;
+        src='...': 塞你JS的網址，可以用絕對網址或相對網址
+        type='...': 告訴瀏覽器加載進來的資源是什麼, 非必要, 沒寫時會由加載進來的response來判斷時什麼類型
+</code>
+</pre>
+<br />
+
+<h4>&lt;Script&gt; 也可以直接拿來寫JavaScript</h4>
+<pre class="code">
+<code class="html">
+        &lt;script&gt;
+            //程式碼寫在內容
+            document.addEventListener('load', function(event){
+                console.log('page onload');
+            })
+        &lt;/script&gt;
+</code>
+</pre>
+<br />
+
+<h4>&lt;Link&gt; 常用來加載CSS</h4>
+<pre class="code">
+<code class="html">
+        &lt;link rel='stylesheet' type='text/css' href='CSS網址'&gt;
+        href='...': 塞你CSS的網址，可以用絕對網址或相對網址
+        rel='stylesheet': 告訴瀏覽器這是樣式表
+        type='...': 跟script的type一樣, 告訴瀏覽器加載進來的資源是什麼, 非必要, 沒寫時會由加載進來的response來判斷時什麼類型
+</code>
+</pre>
+<br />
+
+<h4>&lt;Style&gt; 但是CSS要寫在style裡</h4>
+<pre class="code">
+<code class="html">
+        &lt;style&gt;
+            /*中間寫你的樣式*/
+            div.black-board{
+                border:solid 1px black;
+            }
+        &lt;/style&gt;
+</code>
+</pre>
+<br />
+
+
+<h4>&lt;Meta&gt; 常用於設定這個頁面/網頁的屬性</h4>
+<h5>多半是寫給瀏覽器跟機器人/爬蟲看的，一般使用者不太會去看到</h5>
+<pre class="code">
+<code class="html">
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+        這個告訴瀏覽器 我這是一個網頁 請用編碼utf-8來顯示
+
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        這個告訴瀏覽器 如果是IE 請用相容性edge來瀏覽這網頁
+
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1" &gt;
+        這個告訴瀏覽器 請讓網頁與瀏覽器同寬 用於響應式(RWD)網頁去依寬度變化用的
+
+        &lt;meta name="DC.Title" content="網頁標題" /&gt;
+        &lt;meta name="DC.Subject" content="文章標題" /&gt;
+        &lt;meta name="DC.Creator" content="文章作者" /&gt;
+        &lt;meta name="DC.Publisher" content="文章發布單位" /&gt;
+        &lt;meta name="DC.Date" content="日期" /&gt;
+        這些是寫給機器人看的  如FB/Twitter等  在分享文章時  機器人會跟去這些內容域產生預覽資訊
+</code>
+</pre>
+<br />

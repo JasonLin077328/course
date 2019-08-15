@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "網頁內容元素";
+}
+
+<h2>網頁內容元素</h2>
+<h4>這裡會搭配CSS 方便教學</h4>
+<pre class="code"><code class="css"> .black-board{ border:solid 1px black; /*黑框線*/ }</code></pre>
+<style>
+    .black-board {
+        border: solid 1px black; /*黑框線*/
+    }
+</style>
+<br />
+
+<h4>先介紹容器&lt;Div&gt; 與 &lt;Span&gt;</h4>
+<pre class="code">
+<code class="html">
+        Div 是最基本的容器  不具什麼意義 預設左右滿版
+        &lt;div class="black-board"&gt;內容寫在裡面&lt;/div&gt;
+        <div class="black-board">內容寫在裡面</div>
+
+        另一種是 Span 會根據內容去改變他的大小
+        &lt;span class="black-board"&gt;內容寫在裡面&lt;/span&gt;
+        <span class="black-board">內容寫在裡面</span>
+
+        其他還有 &lt;nav&gt;, &lt;asider&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt; ...etc 都跟&lt;div&gt;一樣都是普通的容器
+        但部分瀏覽器或機器人會根據tag不同 其代表的意義會稍微不同 但也不常用
+</code>
+</pre>
+<br />
+
+
+<h4>在來是純文字</h4>
+<pre class="code">
+<code class="html">
+        只要不是html語法的東西都會被視為純文字
+        &lt;div class="black-board"&gt;這是一行文字寫在div裡面&lt;/div&gt;
+        <div class="black-board">這是一行文字寫在div裡面</div>
+
+        語法打錯 也會被視為純文字
+        &lt;div class="black-board" 故意寫錯的語法
+</code>
+</pre>
+<br />
+
+<h4>要連結到其他頁面 就使用超連結 HyperLink &lt;a&gt;</h4>
+<pre class="code">
+<code class="html">
+        &lt;a href="網址" target="_blank"  &gt;連結文字&lt;/a&gt;
+        <a href="網址" target="_blank">連結文字</a>
+        href="...": 連結的網址 可以是絕對網址或相對網址
+        target="_blank": 開啟的頁面要顯示在哪裡  如_blank為開新分頁 沒寫就是預設當下畫面跳轉到指定網址
+        content: 連結文字
+</code>
+</pre>
+<br />
+
+<h4>圖片 Image &lt;img&gt;</h4>
+<pre class="code">
+<code class="html">
+        &lt;img src="網址" alt="圖片替代文字"  /&gt;
+        src="...": 圖片的網址 可以是絕對網址或相對網址
+        alt="...": 圖片的替代文字 當圖片連結失效或找不到檔案時 會顯示這段文字
+</code>
+</pre>
+<br />
