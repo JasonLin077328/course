@@ -14,8 +14,18 @@ namespace course.Controllers
         public ActionResult Header() => View();
         public ActionResult Body() => View();
         public ActionResult Paragraph() => View();
+        [HttpGet]
         public ActionResult Form() => View();
+        [HttpPost]
+        public ActionResult Form(Dictionary<string, string> data)
+        {
+            ViewData["postdata"] = data;
+            return View();
+        }
+
+
         public ActionResult HomeWork() => View();
+
 
     }
 }

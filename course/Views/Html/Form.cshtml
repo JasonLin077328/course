@@ -4,4 +4,200 @@
 }
 
 <h2>表單&控制項</h2>
+<br />
+<h4>表單&lt;Form&gt; 是用來將使用者填寫的資料送給伺服器用的元素</h4>
+<pre class="code">
+<code class="html">
+        Form 是表單元素的容器  在這個form內的表單元素都算在同一張表單內
+        &lt;from&gt;
+             &lt;!-- 表單元素通通塞裡面 --&gt;
+        &lt;/from&gt;
 
+        但是要注意一點  不能form包from
+        &lt;from&gt;
+            &lt;from&gt;
+                &lt;!-- 這樣母湯 --&gt;
+            &lt;/from&gt;
+        &lt;/from&gt;
+</code>
+</pre>
+<br />
+
+
+<h4>但是不是塞元素了就好了  要替控制項加上"表單欄位名稱 Name" 瀏覽器才會送出該欄位的資料</h4>
+<pre class="code">
+<code class="html">
+        &lt;input type="text" name="account" placeholder="這是Account的欄位" /&gt;
+        <input type="text" name="account" placeholder="這是Account的欄位' " />
+</code>
+</pre>
+<br />
+
+<h4> &lt;input&gt; 輸入項</h4>
+<pre class="code">
+<code class="html">
+        根據type不同 有不同的意義 
+
+        &lt;input type="text" placeholder="純文字" /&gt;
+        <input type="text" placeholder="純文字" />
+
+        &lt;input type="number" placeholder="數字" /&gt;
+        <input type="number" placeholder="數字" />
+
+        &lt;input type="email" placeholder="email" /&gt;
+        <input type="email" placeholder="email" />
+
+        &lt;input type="password" placeholder="密碼" /&gt;
+        <input type="password" placeholder="密碼" />
+
+        type="...": 輸入項的類型
+        placeholder="...": 提示文字
+        name="...": 欄位名稱
+        readonly: 唯讀  不能編寫  瀏覽器也不會將這個控制項的資料送出
+        max: 最大值 (數字類型用)
+        min: 最小值 (數字類型用)
+        maxlength="..": 文字長度 
+        value: 填寫在裡面的文字  如果沒寫就是空白
+</code>
+</pre>
+<br />
+
+<h4> &lt;input&gt; 選擇項</h4>
+<h5>有些類型就有不同的功能</h5>
+<pre class="code">
+<code class="html">
+        如果有複選的選項提供使用者勾選 就會使用checkbox
+        &lt;input type="checkbox" name="col_checkbox" value="value1"/&gt;
+        &lt;input type="checkbox" name="col_checkbox" value="value2"/&gt;
+        <input type="checkbox" name="col_checkbox" value="value1" /> 選項1
+        <input type="checkbox" name="col_checkbox" value="value2" checked /> 選項2
+        name: 欄位名稱
+        value: 欄位值
+        checked: 預設是否被勾選
+        此時只要該checkbox被勾選 就會送出它的值 (多個被勾選就會送出多個同名欄位的資料)
+
+        有另一種單選用選擇項 叫做 radio 可以限制使用者只能勾選其中之一
+        &lt;input type="radio" name="col_radio" value="value1"/&gt;
+        &lt;input type="radio" name="col_radio" value="value2"/&gt;
+        <input type="radio" name="col_radio" value="value1" /> 選項1
+        <input type="radio" name="col_radio" value="value2" checked /> 選項2
+        name: 欄位名稱
+        value: 欄位值
+        checked: 預設是否被勾選
+        此時如果有多個同name的radio 則會連動彼此 只要使用者勾選其中之一 其他的就會被取消
+
+
+        順便給一個常見的寫法  只要用&lt;label&gt;包起來 就可以透過點選文字來勾選
+        &lt;label&gt;
+            &lt;input type="checkbox" name="col_checkbox2" value="value1"/&gt;選項 
+        &lt;/label&gt;
+        <label><input type="checkbox" name="col_checkbox2" value="value1" /> 選項</label>
+    </code>
+</pre>
+<br />
+
+<h4> &lt;input&gt; 其他</h4>
+<pre class="code">
+<code class="html">
+        還有一些類型
+        &lt;input type="button" value="這是一個按鈕" /&gt;
+        <input type="button" value="這是一個按鈕" />
+
+        &lt;input type="submit" value="這是一個可以提交表單的按鈕" /&gt;
+        <input type="submit" value="這是一個可以提交表單的按鈕" />
+
+        最特別的就是這個  這個誰都看不到 但是會跟著form一送出資料
+        &lt;input type="submit" value="隱藏值" name="欄位名" /&gt;
+        <input type="hidden" />
+        &lt;!-- 它在這裡 但你看不到--&gt;
+</code>
+</pre>
+<br />
+
+
+<h4> &lt;textarea&gt; 多行輸入項</h4>
+<pre class="code">
+<code class="html">
+        &lt;textarea placeholder="這是多行輸入" rows="5"&gt; &lt;/textarea&gt;
+        <textarea placeholder="這是多行輸入" rows="3"></textarea>
+        placeholder="...": 提示文字
+        rows="..":預設行數
+</code>
+</pre>
+<br />
+
+<h4> &lt;button&gt; 按鈕</h4>
+<pre class="code">
+<code class="html">
+        如上面有提到的按鈕
+        &lt;input type="button" value="這是一個按鈕" /&gt;
+        &lt;input type="submit" value="這是一個可以提交表單的按鈕" /&gt;
+      
+        有另一種元素專門來當按鈕
+        &lt;button type="button" &gt;按鈕文字 &lt;/button&gt;
+        &lt;button type="submit" &gt;提交按鈕文字 &lt;/button&gt;
+        <button type="button">按鈕文字</button>
+        <button type="submit">提交按鈕文字</button>
+
+        兩者都可用來當提交表單用的按鈕 就看你習慣用哪一個
+</code>
+</pre>
+<br />
+
+
+<h4>簡單做一張表單</h4>
+<h5>既然學到這裡了 何不小試身手一下</h5>
+<pre class="code">
+<code class="html">
+        &lt;!-- 來試著做做看申請帳號的畫面 --&gt;
+        &lt;from&gt;
+            &lt;label&gt;帳號&lt;/label&gt;
+            &lt;input type="text" name="account" placeholder="請輸入帳號"/&gt;  &lt;br /&gt;
+
+            &lt;label&gt;密碼&lt;/label&gt;
+            &lt;input type="password" name="password" placeholder="請輸入密碼"/&gt;  &lt;br /&gt;
+
+            &lt;label&gt;性別&lt;/label&gt;
+            &lt;label&gt;&lt;input type="radio" name="gender" value="male"/&gt;男&lt;/label&gt;
+            &lt;label&gt;&lt;input type="radio" name="gender" value="female"/&gt;女&lt;/label&gt; &lt;br /&gt;
+
+            &lt;label&gt;&lt;input type="checkbox" name="accept" value="true"/&gt;我同意某些使用條款&lt;/label&gt; &lt;br /&gt;
+
+            &lt;button type="submit" &gt;提交申請 &lt;/button&gt; &lt;br /&gt;
+        &lt;/from&gt;
+</code>
+</pre>
+<br/>
+<h4>產生出來的畫面就長的像這樣  要不要試著提交表單看看?</h4>
+<div class="code">
+        <form method="post">
+            <label>帳號</label>
+            <input type="text" name="account" placeholder="請輸入帳號"/> <br/>
+
+            <label>密碼</label>
+            <input type="password" name="password" placeholder="請輸入密碼"/> <br />
+
+            <label>性別</label>
+            <label><input type="radio" name="gender" value="male"/>男</label>
+            <label><input type="radio" name="gender" value="female"/>女</label> <br />
+
+            <label><input type="checkbox" name="accept" value="true"/>我同意某些使用條款</label> <br />
+
+            <button type="submit">提交申請 </button> <br />
+        </form>
+</div>
+@if (ViewData.Keys.Contains("postdata") && ViewData["postdata"] is Dictionary<string, string>)
+{
+    <h5>以下就是你剛post出去的資料</h5>
+    <div class="code">
+        @{ 
+            var Data = (Dictionary<string, string>)ViewData["postdata"];
+            foreach (var key in Data.Keys)
+            {
+                <div> <label> @(key)</label> : @(Data[key])</div>
+            }
+        }
+    </div>
+}
+
+<br />
