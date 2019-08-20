@@ -7,16 +7,16 @@ namespace course.Models
 			return new EFUnitOfWork();
 		}		
 		
-		public static ComapnyRepository GetComapnyRepository()
+		public static CompanyRepository GetCompanyRepository()
 		{
-			var repository = new ComapnyRepository();
+			var repository = new CompanyRepository();
 			repository.UnitOfWork = GetUnitOfWork();
 			return repository;
 		}
 
-		public static ComapnyRepository GetComapnyRepository(IUnitOfWork unitOfWork)
+		public static CompanyRepository GetCompanyRepository(IUnitOfWork unitOfWork)
 		{
-			var repository = new ComapnyRepository();
+			var repository = new CompanyRepository();
 			repository.UnitOfWork = unitOfWork;
 			return repository;
 		}		
