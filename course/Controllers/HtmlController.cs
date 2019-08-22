@@ -17,6 +17,7 @@ namespace course.Controllers
         [HttpGet]
         public ActionResult Form() => View();
         [HttpPost]
+
         public ActionResult Form(FormCollection post_data)
         {
             var data = new Dictionary<string, string>();

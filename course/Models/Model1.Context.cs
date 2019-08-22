@@ -25,7 +25,7 @@ namespace course.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Comapny> Comapny { get; set; }
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Company> Company { get; set; }
     }
 }
