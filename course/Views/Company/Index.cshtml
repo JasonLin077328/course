@@ -1,0 +1,31 @@
+﻿@model  course.Controllers.Company
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@{
+    string s = "";
+
+}
+
+Name:@Model.Name  (@Model.Title)
+
+<br />
+
+Address:@Model.Address
+<br />
+<input type="date">
+
+<form method="post">
+    <p>公司名稱<input type="text" name="Name"></p>
+    <p>公司電話<input type="text" name="Phone"></p>
+    <p>公司地址<input type="text" name="Address"></p>
+    @*<p>
+            是否啟用<select name="ifUse">
+                <option value="true"> yes </option>
+                <option value="false" selected> no </option>
+            </select>
+        </p>*@
+    <button type="submit">儲存</button>
+</form>
